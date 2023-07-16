@@ -1,0 +1,7 @@
+Foi realizada simulação com a Tangle 1.5 que utiliza o algoritmo de TSA(TIP Selection Algorithm) com Markov Chain Monte Carlo(MCMC) para entendimento do algoritimo e verificação de robustes. 
+https://github.com/iotaledger/iotavisualization.git
+
+Esta sendo realizada simulação com Tangle 2.0 que utiliza os algoritmos de TSA(TIP Selection Algorithm) com OTV(On Tangle Voting)e SRRS(Synchronized Random Reality Selection) para entendimento e verificação de robustes. 
+https://github.com/iotaledger/TangleSim.git
+
+
