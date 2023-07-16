@@ -1,0 +1,63 @@
+#Link para acesso ao Google Colab onde estou testando os acessos a Devnet da TANGLE para entender melhor seu funcionamento.
+#https://colab.research.google.com/drive/
+
+#Código em Phyton para conexão ao Nó da Tangle.
+
+#Install Pyota
+Run Every time to open tab
+
+pip install pyota
+
+#Install Iota Client
+
+pip install iota_client
+
+#Node Connection
+
+import iota_client
+
+# create a client with a node
+client = iota_client.Client(nodes_name_password=[['https://api.lb-0.h.chrysalis-devnet.iota.cafe']])
+
+print('get_health()')
+print(f'health: {client.get_health()}')
+
+print('get_info()')
+print(f'node_info: {client.get_info()}')
+
+#Seed Generate Function
+ SeedSeed = VHVQPTSXITPWIGOVOIRNXFKZUILDBINUPAUIA9KPEBCCANQHNMHTZYZWFGZPINBVBFFOMVDAWTMEOTHYF
+
+ SeedReceive = LO9YRNALAPWXJJCTHPZAQMFVSLABNQEKNOCOTQXO9RXRILOOFPMRKFMFMGAHDTMM9KO9IIMMCKQPGQILB
+
+from iota.crypto.types import Seed
+
+Seed = Seed.random()
+print (Seed)
+len(Seed)
+
+#SendSeed
+
+VHVQPTSXITPWIGOVOIRNXFKZUILDBINUPAUIA9KPEBCCANQHNMHTZYZWFGZPINBVBFFOMVDAWTMEOTHYF
+
+
+from iota import Iota
+NodeURL = 'https://api.lb-0.h.chrysalis-devnet.iota.cafe'
+SendSeed = b'VHVQPTSXITPWIGOVOIRNXFKZUILDBINUPAUIA9KPEBCCANQHNMHTZYZWFGZPINBVBFFOMVDAWTMEOTHYF'
+SendAccount = Iota(NodeURL,SendSeed)
+
+#ReceiveSeed
+
+*LO9YRNALAPWXJJCTHPZAQMFVSLABNQEKNOCOTQXO9RXRILOOFPMRKFMFMGAHDTMM9KO9IIMMCKQPGQILB*
+
+#Create a Address
+
+TargetAddress = DWFGPGXTMWGDLVXVSDBYSIGNCFRLNBOFNVHKFSBJEUMXGISVJXMNHHCQSMWCRSCZSURBS9ICUDKUDJZYY
+
+from iota import Iota
+NodeURL = 'https://api.lb-0.h.chrysalis-devnet.iota.cafe'
+ReceiveSeed = b'LO9YRNALAPWXJJCTHPZAQMFVSLABNQEKNOCOTQXO9RXRILOOFPMRKFMFMGAHDTMM9KO9IIMMCKQPGQILB'
+ReceiveAccount = Iota(NodeURL,ReceiveSeed)
+
+TargetAddress = ReceiveAccount.get_new_addresses(index=0, count=1, security_level=2)
+print(TargetAddress)
